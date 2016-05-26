@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('brewbox', ['ionic', 'brewbox.controllers', 'brewbox.services'])
+angular.module('brewbox', ['ionic', 'brewbox.controllers', 'brewbox.services', 'brewbox.directives'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -24,6 +24,30 @@ angular.module('brewbox', ['ionic', 'brewbox.controllers', 'brewbox.services'])
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
+
+  .state('auth', {
+    url: '/auth',
+    abstract: true,
+    templateUrl: 'templates/auth.html',
+    controller: 'AppCtrl'
+  })
+
+  .state('auth.login', {
+    url: '/login', //   #/app/search
+    views: {
+      'tab-login': {
+        templateUrl: 'templates/tab-login.html'
+      }
+    }
+  })
+  .state('auth.register', {
+    url: '/register', //   #/app/search
+    views: {
+      'tab-register': {
+        templateUrl: 'templates/tab-register.html'
+      }
+    }
+  })
 
   .state('app', {
     url: '/app',
@@ -55,6 +79,15 @@ angular.module('brewbox', ['ionic', 'brewbox.controllers', 'brewbox.services'])
     views: {
       'menuContent': {
         templateUrl: 'templates/answers.html'
+      }
+    }
+  })
+
+  .state('app.settings', {
+    url: '/settings',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/settings.html'
       }
     }
   });

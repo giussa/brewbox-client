@@ -1,0 +1,37 @@
+<ion-view view-title="Register">
+  <ion-content class="padding">
+    <form name="registerform">
+      <ion-list>
+        <ion-item class="item-input input-right">
+          <span class="input-label">First Name</span>
+          <input type="text" placeholder="First name" ng-model="firstname">
+        </ion-item >
+
+        <ion-item class="item-input input-right">
+          <span class="input-label">Last name</span>
+          <input type="text" placeholder="Last name" ng-model="lastname">
+        </ion-item >
+
+        <ion-item class="item-input input-right">
+          <span class="input-label">Email</span>
+          <input type="email" placeholder="email" ng-model="email" required>
+        </ion-item >
+
+        <ion-item class="item-input input-right">
+          <span class="input-label">Password</span>
+          <input type="password" placeholder="Inserisci password" ng-model="password" required>
+        </ion-item >
+
+        <ion-item class="item-input input-right">
+          <span class="input-label"></span>
+          <input type="password" placeholder="Ripeti password" ng-model="passwordconfirm" required>
+        </ion-item >
+      </ion-list>
+
+      <button class="button button-block button-assertive" type="submit" ng-disabled="registerform.$invalid">
+        Register
+      </button>
+
+    </form>
+  </ion-content>
+</ion-view>

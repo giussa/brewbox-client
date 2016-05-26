@@ -1,0 +1,21 @@
+<ion-view view-title="Login">
+  <ion-content class="padding">
+    <form name="loginform">
+      <ion-list>
+        <ion-item class="item-input input-right">
+          <span class="input-label">Email</span>
+          <input type="email" placeholder="email" ng-model="email" required>
+        </ion-item >
+
+        <ion-item class="item-input input-right">
+          <span class="input-label">Password</span>
+          <input type="password" placeholder="Inserisci password"  ng-model="password" required>
+        </ion-item >
+      </ion-list>
+
+      <button class="button button-block button-assertive" type="submit" ng-disabled="loginform.$invalid">
+        Login
+      </button>
+    </form>
+  </ion-content>
+</ion-view>
