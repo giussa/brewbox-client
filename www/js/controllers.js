@@ -8,6 +8,7 @@ angular.module('brewbox.controllers', [])
   // listen for the $ionicView.enter event:
   //$scope.$on('$ionicView.enter', function(e) {
   //});
+  
 
   // Form data for the login modal
   $scope.loginData = {};
@@ -53,4 +54,5 @@ angular.module('brewbox.controllers', [])
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
+  console.log($stateParams);
 });

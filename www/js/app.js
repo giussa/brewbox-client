@@ -1,10 +1,10 @@
 // Ionic Starter App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
-// 'brewbox' is the name of this angular module example (also set in a <body> attribute in index.html)
+// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-// 'brewbox.controllers' is found in controllers.js
-angular.module('brewbox', ['ionic', 'brewbox.controllers'])
+// 'starter.controllers' is found in controllers.js
+angular.module('brewbox', ['ionic', 'brewbox.controllers', 'brewbox.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -32,42 +32,32 @@ angular.module('brewbox', ['ionic', 'brewbox.controllers'])
     controller: 'AppCtrl'
   })
 
-  .state('app.search', {
-    url: '/search',
+  .state('app.polls', {
+    url: '/polls', //   #/app/search
     views: {
       'menuContent': {
-        templateUrl: 'templates/search.html'
+        templateUrl: 'templates/polls.html'
       }
     }
   })
 
-  .state('app.browse', {
-      url: '/browse',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/browse.html'
-        }
-      }
-    })
-    .state('app.playlists', {
-      url: '/playlists',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
-
-  .state('app.single', {
-    url: '/playlists/:playlistId',
+  .state('app.poll', {
+    url: '/polls/:pollsId',
     views: {
       'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
+        templateUrl: 'templates/poll.html',
+      }
+    }
+  })
+
+  .state('app.answers', {
+    url: '/answers',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/answers.html'
       }
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/polls');
 });
